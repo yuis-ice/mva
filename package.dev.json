@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "dev:init": "npm run build && node dist/index.js init",
+    "dev:status": "npm run build && node dist/index.js status",
+    "dev:help": "npm run build && node dist/index.js --help",
+    "dev:setup": "npm run build && node dist/index.js setup-directories",
+    "demo": "./demo.sh"
+  }
+}

@@ -1,0 +1,125 @@
+name: 🐛 Bug Report
+description: File a bug report to help us improve mva
+title: "[Bug]: "
+labels: ["bug", "triage"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report! Please provide as much detail as possible.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Prerequisites
+      description: Please confirm the following before submitting your bug report
+      options:
+        - label: I have searched for existing issues that may be the same as or related to mine
+          required: true
+        - label: I have read the documentation and followed the setup instructions
+          required: true
+        - label: I am using the latest version of mva
+          required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: mva Version
+      description: What version of mva are you running?
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - Ubuntu/Debian
+        - CentOS/RHEL/Fedora
+        - macOS
+        - Windows (WSL)
+        - Other Linux
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node.js Version
+      description: What version of Node.js are you running? (run `node --version`)
+      placeholder: "v18.17.0"
+    validations:
+      required: true
+
+  - type: input
+    id: rclone-version
+    attributes:
+      label: rclone Version
+      description: What version of rclone are you using? (run `rclone version`)
+      placeholder: "rclone v1.64.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: Bug Description
+      description: A clear and concise description of what the bug is
+      placeholder: "Describe what happened..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what you expected to happen
+      placeholder: "Describe what should have happened..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Detailed steps to reproduce the behavior
+      placeholder: |
+        1. Run command '...'
+        2. Move file to '...'
+        3. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration
+      description: Your mva configuration file (please remove sensitive information like actual remote names)
+      render: yaml
+      placeholder: |
+        directories:
+          - directory: "/srv/mva/example"
+            at: "0 2 * * *"
+            format: "{humanTime}-{filename}.{ext}"
+            compress: "tar.gz"
+            destination: "remote:backup"
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: Any relevant log output or error messages
+      render: shell
+      placeholder: "Paste any error messages or log output here..."
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem here
+      placeholder: "Any additional information that might help..."

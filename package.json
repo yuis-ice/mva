@@ -1,0 +1,37 @@
+{
+  "name": "mva",
+  "version": "1.0.0",
+  "description": "mv-archive - rclone backup/archiving simpler, efficient, and graceful",
+  "main": "dist/index.js",
+  "bin": {
+    "mva": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["backup", "archive", "rclone", "cli"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cron": "^2.4.3",
+    "@types/fs-extra": "^11.0.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^24.1.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "chokidar": "^4.0.3",
+    "commander": "^14.0.0",
+    "fs-extra": "^11.3.0",
+    "js-yaml": "^4.1.0",
+    "node-cron": "^4.2.1",
+    "tar": "^7.4.3"
+  }
+}

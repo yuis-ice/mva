@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build and Run mva",
+			"type": "shell",
+			"command": "npm",
+			"args": [
+				"run",
+				"build"
+			],
+			"group": "build",
+			"problemMatcher": [
+				"$tsc"
+			],
+			"isBackground": false
+		},
+		{
+			"label": "Watch and Build",
+			"type": "shell",
+			"command": "tsc",
+			"args": ["--watch"],
+			"group": "build",
+			"isBackground": true,
+			"problemMatcher": ["$tsc-watch"]
+		},
+		{
+			"label": "Run mva help",
+			"type": "shell",
+			"command": "node",
+			"args": ["dist/index.js", "--help"],
+			"group": "test",
+			"dependsOn": "Build and Run mva"
+		},
+		{
+			"label": "Run mva status",
+			"type": "shell",
+			"command": "node",
+			"args": ["dist/index.js", "status"],
+			"group": "test",
+			"dependsOn": "Build and Run mva"
+		},
+		{
+			"label": "Clean",
+			"type": "shell",
+			"command": "npm",
+			"args": ["run", "clean"],
+			"group": "build"
+		}
+	]
+}
