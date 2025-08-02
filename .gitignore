@@ -195,6 +195,9 @@ test-output/
 *.tar.gz
 temp-archive/
 
+# Articles directory - not tracked in git
+articles/
+
 # Screenshots for documentation
-screenshot.png
+# screenshot.png - keeping this for README
 demo-output.html
