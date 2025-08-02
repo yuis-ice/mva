@@ -1,0 +1,8 @@
+# Articles Directory
+
+This directory contains articles for Qiita and other platforms.
+
+## Structure
+- Japanese articles: `*.md`
+- English articles: `*-en.md`
+- Screenshots and assets: Referenced from project root or external CDN
